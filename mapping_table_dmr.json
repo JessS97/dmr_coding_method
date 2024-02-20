@@ -1,0 +1,25 @@
+{"initial_2mer":{
+    "0": ["AA", "CC", "GG", "TT"],
+    "1": ["AC", "CG", "GT", "TA"],
+    "2": ["AG", "CT", "GA", "TC"],
+    "3": ["AT", "CA", "GC", "TG"]
+    },
+    
+"map_library":{
+    "AA": ["AA", "CG", "GT", "TC"],
+    "CC": ["CC", "GT", "TA", "AG"],
+    "GG": ["GG", "TA", "AC", "CT"],
+    "TT": ["TT", "AC", "CG", "GA"],
+    "AC": ["AC", "CT", "GA", "TG"],
+    "CG": ["CG", "GA", "TC", "AT"],
+    "GT": ["GT", "TC", "AG", "CA"],
+    "TA": ["TA", "AG", "CT", "GC"],
+    "AG": ["AG", "CA", "GC", "TT"],
+    "CT": ["CT", "GC", "TG", "AA"],
+    "GA": ["GA", "TG", "AT", "CC"],
+    "TC": ["TC", "AT", "CA", "GG"],
+    "AT": ["AT", "CC", "GG", "TA"],
+    "CA": ["CA", "GG", "TT", "AC"],
+    "GC": ["GC", "TT", "AA", "CG"],
+    "TG": ["TG", "AA", "CC", "GT"]
+}}

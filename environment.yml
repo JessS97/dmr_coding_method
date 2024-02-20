@@ -1,0 +1,17 @@
+name: biosynth
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - python=3.10
+  - pip=22.3
+  - numpy=1.23
+  - matplotlib=3.5
+  - sympy=1.11
+  - pip:
+    - opencv-python==4.7.0.72
+    - bitstring==4.0
+    - reedsolo==1.7
+    - levenshtein==0.21.0
+    - packbits==0.6
