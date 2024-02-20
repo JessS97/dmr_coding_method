@@ -8,6 +8,7 @@ tags:
   - 
 authors:
   - name: Jessica Schindler
+    equal-contrib: true
     affiliation: 1 
   - name: Babak Saremi
     corresponding: true 
