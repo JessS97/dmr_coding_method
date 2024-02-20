@@ -1,0 +1,11 @@
+
+Trial: 0, ('Encoded & mutated DNA:', 0.9808823529411764), ('Encoded & decoded picture', 1.0)
+Trial: 1, ('Encoded & mutated DNA:', 0.9808823529411764), ('Encoded & decoded picture', 0.9945676776822091)
+Trial: 2, ('Encoded & mutated DNA:', 0.9808823529411764), ('Encoded & decoded picture', 1.0)
+Trial: 3, ('Encoded & mutated DNA:', 0.9808823529411764), ('Encoded & decoded picture', 1.0)
+Trial: 4, ('Encoded & mutated DNA:', 0.9808823529411764), ('Encoded & decoded picture', 1.0)
+Trial: 5, ('Encoded & mutated DNA:', 0.9808823529411764), ('Encoded & decoded picture', 1.0)
+Trial: 6, ('Encoded & mutated DNA:', 0.9808823529411764), ('Encoded & decoded picture', 1.0)
+Trial: 7, ('Encoded & mutated DNA:', 0.9808823529411764), ('Encoded & decoded picture', 1.0)
+Trial: 8, ('Encoded & mutated DNA:', 0.9808823529411764), ('Encoded & decoded picture', 1.0)
+Trial: 9, ('Encoded & mutated DNA:', 0.9808823529411764), ('Encoded & decoded picture', 1.0)

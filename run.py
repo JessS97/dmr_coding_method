@@ -26,7 +26,7 @@ if len(sys.argv) > 1:  # Start in the terminal when arguments are entered
 
 else:   # If no arguments were passed from the command line, set the arguments here directly in the code
     options = optparse.Values()
-    options.correction = "RS"
+    options.correction = "DMR"
     options.out_path = "output\\"
     options.use_logo = "short"
     options.error_rates = [0.02]
@@ -34,7 +34,7 @@ else:   # If no arguments were passed from the command line, set the arguments h
     options.error_type = "subs"
     options.rs_codec_value = 32
     options.min_codec_value = 1
-    options.min_segment_length = [20, 25]    # [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+    options.min_segment_length = [20]    # [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
 
 
 #####################
