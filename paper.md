@@ -1,3 +1,4 @@
+---
 title: 'DNA Data Storage: Error Correction with Dynamic Mapping Rule'
 tags:
   - DNA data storage
