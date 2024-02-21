@@ -5,67 +5,90 @@ tags:
   - base mapping
   - reed solomon
   - random mask
-  - 
+
 authors:
-  - name: Adrian M. Price-Whelan
-    orcid: 0000-0000-0000-0000
+  - name: Jessica Schindler
     equal-contrib: true
-    affiliation: "1, 2" # (Multiple affiliations must be quoted)
-  - name: Author Without ORCID
-    equal-contrib: true # (This is how you can denote equal contributions between multiple authors)
-    affiliation: 2
-  - name: Author with no affiliation
-    corresponding: true # (This is how to denote the corresponding author)
-    affiliation: 3
-  - given-names: Ludwig
-    dropping-particle: van
-    surname: Beethoven
-    affiliation: 3
+    affiliation: 1 
+  - name: Babak Saremi
+    corresponding: true 
+    affiliation: 1
+  - name: Omar El Menuawy
+    corresponding: true 
+    affiliation: 1
+  - name: Tamara Hadzic
+    corresponding: true 
+    affiliation: 1
+  - name: Lena Wiese
+    corresponding: true 
+    affiliation: 1
+
 affiliations:
  - name: Fraunhofer Institute for Toxicology and Experimental Medicine (ITEM), Hannover, Germany
    index: 1
+
 date: 23 January 2023
 bibliography: paper.bib
 ---
 
 # Summary
 
-- DNA storage
-- Fehlerkorrektur
-- DMR Verfahren mehr eingehen
-
-# Statement of need
-
-- DNA speicher 
-- verschiedene Fehlerkorrekturverfahren vorhanden
-- möglichst gute Korrekturmethode finden 
-- andere nennen --> meist nur subs fehler, oft mit RS gekoppelt
-- 
-DMR is a method for encoding bits in DNA and then decoding them. The method is based on a mapping table, which is used for the translation and also gives 
-the dynamic mapping rule its name. With the help of this mapping table, a self-correction of the DNA sequence is to be achieved. In addition, the coding 
-was combined with RS so that the correction with the DMR scheme can be validated with the help of RS and thus leads to a better correction than the stand-alone 
-use of DMR or RS. 
-In addition, the use of the DMR scheme offers the possibility to localize incorrect areas of the DNA by comparison with the mapping possibilities and thus 
-to carry out targeted corrective procedures at the affected sites. This should make it possible to correct substitution errors as well as insertion and 
-deletion errors. For the correction, the levels must be adapted and expanded accordingly so that an optimal correction can be achieved. The current correction 
-is only suitable for the correction of substitution errors, but it is possible to extend it for the correction of insertion and deletion errors. 
+The amount of generated data has multiplied rapidly in recent years. Conventional storage methods will eventually reach their limits and may no longer 
+be sufficient to store the amount of data. Therefore, a new long-term storage method that can primarily store archival data is needed in order to be able 
+to store the increasing amount of data in the coming years. 
+DNA offers the advantages of long-term storage and storage density, causing the scientific community to attempt to make DNA usable as a storage method. 
+This program contains the coding and error correction procedure of our self-developed "dynamic mapping rule" DMR method for storing data in DNA. 
+The error correction of the method is based on the comparison of the faulty sequence with the mapping scheme and a level-based correction, which specifically 
+addresses the known locations where the mapping does not match. By combining this with the Reed Solomon (RS) code, the valid segments of the DMR correction can 
+be confirmed. Simulations have shown that the correction with the DMR scheme works better than the correction with RS alone. 
 
 
-- Bild: Edit RS und DMR Vergleich \autoref{fig:error_correction}
+# Statement of need 
+
+It is estimated that the amount of data will be up to 180 zettabytes in 2025, an increase 
+of up to 23% from 2020 to 2025 [@IDC:2021]. Based on these forecasts, a new storage option is being sought, whereby the storage of data in DNA is being 
+considered. DNA offers the advantages of extremely high information density and longevity, enabling space-saving and resource-conserving long-term storage. 
+To store data in DNA, it must first be translated into DNA using a transcription scheme so that the encoded sequence can then be synthesized and sequenced.
+During synthesis and sequencing, errors can occur, therefore they have to be corrected before decoding to ensure that an error-free output file can be 
+restored. 
+
+The popular error-correcting coding system is Reed Solomon (RS). It is used in a wide range of applications in digital communications and data storage and find
+use in mass storage devices (hard disk drives, DVD, barcode tags), wireless and mobile communications units, satellite links, digital TV, digital video 
+broadcasting (DVB), and modem technologies like xDSL [@Shrivastava:2013]. To increase the efficiency of the correction in data storage applications,
+the RS code is used in combination with the own correction method. For example, Erlich and Zielinski [@Erlich:2017], Press et. al [@Press:2020] and 
+Blawat et. al [@Blawat:2016] use RS within their developed correction methods.
+
+For efficient decoding of data, it is necessary to determine an optimal correction method. This requires different methods to be developed, tested and 
+compared with each other. For this reason, we developed the "dynamic mapping rule" (DMR) method, which provides coding and decoding including error 
+correction of data. The method is based on a mapping table, which is used for the translation and also gives 
+the dynamic mapping rule its name. With the help of this mapping table, a self-correction of the DNA sequence is achieved. In addition, the coding 
+was combined with RS so that the correction with the DMR scheme can be validated with the help of RS and thus leads to a better correction than the 
+stand-alone use of DMR or RS. In addition, the use of the DMR scheme offers the possibility to localize incorrect areas of the DNA by comparison with the
+mapping possibilities and thus carry out targeted corrective procedures at the affected sites. This should make it possible to correct substitution as well 
+as insertion and deletion errors. 
+
+The correction in the DMR scheme is executed with different designed levels, which proceed one after the other and try out different methods for the correction.
+In the first level, for example, the incorrect sections are determined and an attempt is made to replace incorrect bases at precisely these points and thus 
+repair the errors. To do this, the mapping table is consulted and all possible combinations for the previous and next 2-mers are searched for. Of these 
+identified 2-mers, only those that show at least 1 matching base to the faulty 2-mere are tested. The possible sequences are checked using the RS code 
+to correct them. This step determines whether the possibilities found are correct or not. The subsequent levels are designed in such a way that more and more 
+possibilities are found if no correction has been made in the previous level. For the correction, the levels must be adapted and expanded accordingly so that 
+an optimal correction can be achieved.    ---> Schema erstellen?
+
+The current code was developed internally as part of the BIOSYNTH project and is now being published as open software. The current designed levels are only 
+suitable for the correction of substitution errors, but it is possible to extend them for the correction of insertion and deletion errors. 
+The developed DMR method was compared with the RS method by encoding the small Fraunhofer logo with the segmented Bitarray encoding method using different 
+amounts of error-correcting symbols. Substitution errors were then added to the encoded DNA and decoded. A total of 20 trials for DMR and 50 trials for RS 
+were performed per setting. Figure \autoref{fig:error_correction} shows the results of this comparison and shows that the correction with the DMR scheme 
+produces higher edit distances than the correction with RS, which proves the more effective correction of substitution errors. 
 
 
-# Mathematics
-
+Vergleich andere Methoden: anschauen --> konkurrenzfähig?
+DMR: Bild: 208x208 = 43264 pixel --> DNA: RS 20 % --> 38744 + Spacer für 360 segmente  --> segmented packbits
+--> bis zu 1% Fehler 1 von 20 nicht korrigiert --> 1,5 % 5/20 nicht korrigert   --> 2% 6/20  Edit Distanz immer über 0,992
 
 
 # Citations
-
-Citations to entries in paper.bib should be in
-[rMarkdown](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
-format.
-
-If you want to cite a software repository URL (e.g. something on GitHub without a preferred
-citation) then you can do it with the example BibTeX entry below for @fidgit.
 
 For a quick reference, the following citation commands can be used:
 - `@author:2001`  ->  "Author et al. (2001)"
@@ -74,10 +97,8 @@ For a quick reference, the following citation commands can be used:
 
 # Figures
 
-Figures can be included like this:
 ![Comparison of DMR and RS correction with different settings and error rates of the bitarray segmentation coding method.\label{fig:error_correction}]
 (DMR(n=20) and RS(n=50) correction with bitarray segmentation.png){ width=100% }
-
 
 # Acknowledgements
 
