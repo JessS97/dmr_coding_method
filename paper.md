@@ -87,10 +87,10 @@ produces higher edit distances than the correction with RS, which proves the mor
 # Figures
 
 ![Schematic illustration of the dmr error correction. Firstly, the spacers are removed from the DNA sequence and the segments are initially scanned for correct 
-and incorrect sequences. The incorrect segments then enter the DMR correction process. The levels run attempt to create segments that match the mapping schema, 
-and these segments are checked with RS. If the check with RS does not work, an attempt is made to correct the incorrect segment with the next level.  
-If the check works, all corrected possible segments are analysed. If they are all the same or one segment has the majority, it is accepted as corrected. 
-If none of the segments stand out by majority, the segment with the greatest similarity to the incorrect segment is assumed to be corrected.
+and incorrect sequences. The incorrect segments then enter the DMR correction process. The levels that are passed through attempt to create segments that match 
+the mapping scheme, these segments are then verified with RS. If the check with RS does not work, an attempt is made to correct the incorrect segment with the 
+next level. If the check works, all corrected possible segments are analysed. If they are all the same or one segment has the majority, it is accepted as 
+corrected. If none of the segments stand out by majority, the segment with the greatest similarity to the incorrect segment is assumed to be corrected.
 \label{fig:level_design}](dmr_level_design.png)
 
 ![Comparison of DMR and RS correction with different settings and error rates of the bit array segmentation coding method. The simulation of the DMR correction
