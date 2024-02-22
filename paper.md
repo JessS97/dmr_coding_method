@@ -74,7 +74,7 @@ repair the errors. To do this, the mapping table is consulted and all possible c
 identified 2-mers, only those that show at least 1 matching base to the faulty 2-mere are tested. The possible sequences are checked using the RS code 
 to correct them. This step determines whether the possibilities found are correct or not. The subsequent levels are designed in such a way that more and more 
 possibilities are found if no correction has been made in the previous level. For the correction, the levels must be adapted and expanded accordingly so that 
-an optimal correction can be achieved.    ---> Schema erstellen?
+an optimal correction can be achieved. Figure \autoref{fig:level_design} shows the schematic illustration of the described DMR correction.     
 
 The current code was developed internally as part of the BIOSYNTH project and is now being published as open software. The current designed levels are only 
 suitable for the correction of substitution errors, but it is possible to extend them for the correction of insertion and deletion errors. 
@@ -84,22 +84,11 @@ were performed per setting. Figure \autoref{fig:error_correction} shows the resu
 produces higher edit distances than the correction with RS, which proves the more effective correction of substitution errors. 
 
 
-Vergleich andere Methoden: anschauen --> konkurrenzfähig?
-DMR: Bild: 208x208 = 43264 pixel --> DNA: RS 20 % --> 38744 + Spacer für 360 segmente  --> segmented packbits
---> bis zu 1% Fehler 1 von 20 nicht korrigiert --> 1,5 % 5/20 nicht korrigert   --> 2% 6/20  Edit Distanz immer über 0,992
-
-
-# Citations
-
-For a quick reference, the following citation commands can be used:
-- `@author:2001`  ->  "Author et al. (2001)"
-- `[@author:2001]` -> "(Author et al., 2001)"
-- `[@author1:2001; @author2:2001]` -> "(Author1 et al., 2001; Author2 et al., 2002)"
-
 # Figures
 
-![Comparison of DMR and RS correction with different settings and error rates of the bitarray segmentation coding method.\label{fig:error_correction}]
-(DMR(n=20) and RS(n=50) correction with bitarray segmentation.png){ width=100% }
+![Schematic illustration of the dmr error correction.\label{fig:level_design}](dmr_level_design.png)
+
+![Comparison of DMR and RS correction with different settings and error rates of the bitarray segmentation coding method.\label{fig:error_correction}](DMR(n=20)_RS(n=50)_correction_with_bitarray_segmentation.png)
 
 # Acknowledgements
 
