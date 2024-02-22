@@ -74,21 +74,30 @@ repair the errors. To do this, the mapping table is consulted and all possible c
 identified 2-mers, only those that show at least 1 matching base to the faulty 2-mere are tested. The possible sequences are checked using the RS code 
 to correct them. This step determines whether the possibilities found are correct or not. The subsequent levels are designed in such a way that more and more 
 possibilities are found if no correction has been made in the previous level. For the correction, the levels must be adapted and expanded accordingly so that 
-an optimal correction can be achieved. Figure \autoref{fig:level_design} shows the schematic illustration of the described DMR correction.     
+an optimal correction can be achieved. \autoref{fig:level_design} shows the schematic illustration of the described DMR correction.     
 
 The current code was developed internally as part of the BIOSYNTH project and is now being published as open software. The current designed levels are only 
 suitable for the correction of substitution errors, but it is possible to extend them for the correction of insertion and deletion errors. 
 The developed DMR method was compared with the RS method by encoding the small Fraunhofer logo with the segmented Bitarray encoding method using different 
 amounts of error-correcting symbols. Substitution errors were then added to the encoded DNA and decoded. A total of 20 trials for DMR and 50 trials for RS 
-were performed per setting. Figure \autoref{fig:error_correction} shows the results of this comparison and shows that the correction with the DMR scheme 
+were performed per setting. \autoref{fig:error_correction} shows the results of this comparison and shows that the correction with the DMR scheme 
 produces higher edit distances than the correction with RS, which proves the more effective correction of substitution errors. 
 
 
 # Figures
 
-![Schematic illustration of the dmr error correction.\label{fig:level_design}](dmr_level_design.png)
+![Schematic illustration of the dmr error correction. Firstly, the spacers are removed from the DNA sequence and the segments are initially scanned for correct 
+and incorrect sequences. The incorrect segments then enter the DMR correction process. The levels run attempt to create segments that match the mapping schema, 
+and these segments are checked with RS. If the check with RS does not work, an attempt is made to correct the incorrect segment with the next level.  
+If the check works, all corrected possible segments are analysed. If they are all the same or one segment has the majority, it is accepted as corrected. 
+If none of the segments stand out by majority, the segment with the greatest similarity to the incorrect segment is assumed to be corrected.
+\label{fig:level_design}](dmr_level_design.png)
 
-![Comparison of DMR and RS correction with different settings and error rates of the bitarray segmentation coding method.\label{fig:error_correction}](DMR(n=20)_RS(n=50)_correction_with_bitarray_segmentation.png)
+![Comparison of DMR and RS correction with different settings and error rates of the bit array segmentation coding method. The simulation of the DMR correction
+is shown on the left and was performed with 20 trials. The simulation with RS is shown on the right and was performed with 50 trials. In both diagrams, fully 
+corrected images with an edit distance of 1 are shown in blue and erroneous images with a smaller edit distance are shown in red. The coding was carried out
+with the help of a bit array segmentation. Here, the image is first read in and then the pixels are divided into segments. The individual segments are then 
+compressed and translated. \label{fig:error_correction}](DMR(n=20)_RS(n=50)_correction_with_bitarray_segmentation.png)
 
 # Acknowledgements
 
