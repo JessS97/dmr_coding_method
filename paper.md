@@ -101,7 +101,7 @@ Created with BioRender.com \label{fig:level_design}](dmr_level_design.png)
 is shown on the left and was performed with 20 trials. The simulation with RS is shown on the right and was performed with 50 trials. In both diagrams, fully 
 corrected images with an edit distance of 1 are shown in blue and erroneous images with a smaller edit distance are shown in red. The coding was carried out
 with the help of a bit array segmentation. Here, the image is first read in and then the pixels are divided into segments. The individual segments are then 
-compressed and translated. \label{fig:error_correction}](DMR(n=20)_RS(n=50)_correction_with_bitarray_segmentation.png)
+compressed and translated. \label{fig:error_correction}](DMR_RS_correction_bitarray_segmentation.png)
 
 # Acknowledgements
 
