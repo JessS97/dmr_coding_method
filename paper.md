@@ -11,15 +11,15 @@ authors:
   - name: Jessica Schindler
     equal-contrib: true
     affiliation: 1 
-  - name: Babak Saremi
-    equal-contrib: true
-    affiliation: 1
   - name: Omar El Menuawy
+    equal-contrib: true
     affiliation: 1
   - name: Tamara Hadzic
     affiliation: 1
   - name: Lena Wiese
     corresponding: true 
+    affiliation: 1
+  - name: Babak Saremi
     affiliation: 1
 
 affiliations:
@@ -107,5 +107,11 @@ compressed and translated. \label{fig:error_correction}](DMR_RS_correction_bitar
 
 This work was funded by the Fraunhofer PREPARE Programm and developed within the BIOSYNTH project under the project number 40-03168-2420 as part of the data 
 coding research.
+
+# Author Contributions
+J.S., B.S. and L.W. wrote the paper. J.S. created the figures, helped with the creation of the main functions, enhanced the error correction, designed and performed the simulation. 
+O.M. has written the base code of the DMR mapping and error correction. 
+T.H. helped with the creation of the main functions and wrote the code for the edit distance calculation and error simulation. 
+B.S., L.W. and O.M. conceptualized the DMR mapping. All authors reviewed the manuscript. 
 
 # References
